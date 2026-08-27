@@ -40,7 +40,7 @@ public class AccountRegisterPage extends BasePage {
 	@FindBy(xpath = "//h1[normalize-space()='Your Account Has Been Created!']")
 	WebElement msgConfirmation;
 	
-	//////////////////Actions/////////////////////////////
+	//////////////////Actions/////////////////////////////Es7ab ya bashaaaaa//////
 	
 	
 	public void setFirstName(String firstName) {
