@@ -96,9 +96,39 @@ CI/CD
 //GIT is a local repository By (Commit to local repo)
 //GITHub is a remote repository By (Push to remote repo)
 
-PreReq:
-1)Git Inatsllation
-===============================
-//Steps: Go to the project location, open batch cmd for Git Then:  
- 1)Git init
- 
+
+ Git & GitHub workflow
+---------------------
+
+1) Create a new local repository (one time)
+
+git init
+
+
+2) Provide user info to git repo. (one time)
+
+git config --global user.name "your name"
+git config --global user.email "your email"
+
+
+3) Adding files/folders to staging/indexing
+
+git add -A              --> add all the files and folders to staging
+git add filename
+git add *.java
+git add foldername
+
+
+4) Commit the code into local (git) repository
+
+git commit -m "commit message"
+
+
+5) Connect local repository with remote repo. (one time)
+
+git remote add origin "https://github.com/pavanoltraining/OpencartV121.git"
+
+
+6) Push the code into remote repository.
+
+git push -u origin master
