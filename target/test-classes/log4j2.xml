@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Configuration status="WARN">
+
+    <Properties>
+
+        <!-- Folder where log files will be generated -->
+        <Property name="basePath">./logs</Property>
+
+    </Properties>
+
+
+    <Appenders>
+
+        <!--
+            Console Appender:
+            Writes logs in Eclipse Console
+        -->
+        <Console name="Console" target="SYSTEM_OUT">
+
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+
+        </Console>
+
+        <!--
+            File Appender:
+            Creates a separate log file for every test execution.
+
+        -->
+        <File
+            name="File"
+            fileName="${basePath}/automation_${sys:runId}.log"
+            append="true">
+
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+
+        </File>
+
+
+    </Appenders>
+
+
+    <Loggers>
+
+        <!--
+            Log Level:
+
+            DEBUG  -> DEBUG + INFO + WARN + ERROR + FATAL
+            INFO   -> INFO + WARN + ERROR + FATAL
+            WARN   -> WARN + ERROR + FATAL
+            ERROR  -> ERROR + FATAL
+        -->
+        <Root level="INFO">
+            <!-- Write logs to execution log file -->
+            <AppenderRef ref="File"/>
+            
+            <!--
+                Uncomment this if you also want
+                the logs to appear in Eclipse Console
+            -->
+
+            <!-- <AppenderRef ref="Console"/> -->
+
+        </Root>
+
+    </Loggers>
+
+</Configuration>

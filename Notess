@@ -1,0 +1,104 @@
+Notes
+================
+
+//Each page object class should contains (Constuctor , Locator , Action methods )
+
+//Each Page Object class contain its Web elements as a feilds inside that class identefied by @find annotation 
+//Each Page Object class contain METHODS that implment the actions will be done on those fields 
+//In page object classes we only Get the feilds and implemnt the required actions on methods no validations done in this part 
+
+//Logss
+=>Logging - record all the events in the form of text.
+
+=>Log Levels(Types) - All < Trace < Debug < Info < Warn < Error < Fatal < Off 
+
+//IF we Sepcify debug it will capture from debug and lower till fatal 
+
+//To automate any test case first define the pages to create paga Objects
+
+==>The DataProvider reads the test data from the Excel file and stores it in a two-dimensional String array.
+Each row represents one complete set of test data, such as an email, password, and status.
+The loops inside getData() are only responsible for reading the rows and columns from Excel and filling the array.
+After the array is returned, TestNG executes the test method once for each row. Therefore,
+ if the Excel file contains 10 data rows, the test method will run 10 times with different data each time.4
+ 
+ //When we specify groups
+ 
+//Instead of creating and setting Up multiple VMs we use docker concept By creating and downloading docker images from docker HUB website 
+//From images we will create our container that containns all the setUp and it will act as Node or (VM) 
+//So we will be creatring Mutiple containers instead of mutiple VMs
+//Then this Containers Or (Nodes) will be connected to the Selenium HUB and based on the specefied browser and OS the target node will be triggerd
+
+
+Dockerr -- Containeraizations
+========================================
+DockerHub: is a repository that contains mutiple images for downloading 
+Image: Its something that will be downloaded from DockerHub that we can use to create our containers from this images
+ex:From Linux Image we can create Linux Container that will act as Linux operating system
+So, this will not share our hardware like creating VMs that will extend its resources from the Host hardware machine 
+//We will download image for our Hub machine==>(Container) and another images==>(Containers) for our nodes machines.
+//From 1 image we can create mutiple containers but e can use only 1 image per container 
+
+Docker Commands
+=======================================
+-Docker Info==>Displaying info about the running one 
+-Docker --help ==>List all the docker commands with descriptions
+-Docker images ==>List all images that exists 
+-Docker pull [imageName]==>Downloading the image from the DockerHub
+-Docker rmi [imageId]==>Deleting the image using image id returned form [Docker images] command
+-Docker login==>Login 
+
+-Docker ps ==>List only Running Containers now
+-Docker run [imageName]==>Create Container from the existing image if the image is not downloaded the command will download it first and
+create the contaier next, But not start it only create the container 
+-Docker start [containerId]==>Start the container run it (If you have the Container id from [Docker ps] command )
+-Docker run -it [imageName]==>create new container and Start Running the Container and interacting with it
+-Docker stop [containerId]==>Stop the container 
+-Docker rm [containerId]==>Remove the container 
+====================================================
+-Docker run -it --name myubuntu ubuntu==> To Create and Start and interact and download the image if its not exists ==> docker run → Create + Start // -it → Interactive Terminal // --name myubuntu →esm el container lly e5atrto // ubuntu → اسم الـImage 
+-Docker start -ai myubuntu==>To Run it again and start interacting with it
+-Docker exec -it myubuntu bash==>Law container sha8al w 3aiz ted5ol gowah 3ashan t interact 
+============================================================================================
+
+
+
+-Docker stats==>Listing the details of resources consumed
+-Docker system df ==> listing status if images and containers 
+-Docker system prune -f
+
+
+//We will use 3 images and create 3 contianers and connect them through same network
+1)Hub
+2)Linux-fireFox
+3)Linux-Chrome
+
+
+docker run -d -p 4442-4444:4442-4444 --net grid --name selenium-hub selenium/hub:latest
+
+
+
+docker run -d --net grid -e SE_EVENT_BUS_HOST=selenium-hub --shm-size="2g" -e SE_EVENT_BUS_PUBLISH_PORT=4442 -e SE_EVENT_BUS_SUBSCRIBE_PORT=4443 selenium/node-chrome:latest
+
+
+
+docker run -d --net grid -e SE_EVENT_BUS_HOST=selenium-hub --shm-size="2g" -e SE_EVENT_BUS_PUBLISH_PORT=4442 -e SE_EVENT_BUS_SUBSCRIBE_PORT=4443 selenium/node-firefox:latest
+
+
+
+//docker-compose up ==>This Run the Yaml file that contain all the docker configuration containers and nodes
+
+
+==============================================================================================================
+
+CI/CD
+
+//GIT is a local repository By (Commit to local repo)
+//GITHub is a remote repository By (Push to remote repo)
+
+PreReq:
+1)Git Inatsllation
+===============================
+//Steps: Go to the project location, open batch cmd for Git Then:  
+ 1)Git init
+ 
