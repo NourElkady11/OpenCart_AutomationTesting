@@ -100,6 +100,8 @@ CI/CD
  Git & GitHub workflow
 ---------------------
 
+Round 1)
+----------
 1) Create a new local repository (one time)
 
 git init
@@ -132,3 +134,42 @@ git remote add origin "https://github.com/pavanoltraining/OpencartV121.git"
 6) Push the code into remote repository.
 
 git push -u origin master
+
+
+Round 2)
+--------
+1)git add -A
+2)git commit -m "AnyName"
+3)git push 
+=================================
+For Pulling
+1)git pull 
+
+For Clonning
+==========================
+1)git clone "https://github.com/NourElkady11/OpenCart_AutomationTesting.git"
+
+===============================================================================
+
+Jenkins is a Continous integration tool
+----------
+CI=>Continous integrtion 
+CD=>Contionous deployment 
+
+Pipline )  Dev Code==> Build==>Automation Tests==>Deployment
+Jenkins run the test casses headless its not focusing on browser in real life it foucuess on the backend
+
+To Run Jenkins type in CMD inside the location of the jenkins.war file:
+Java -jar jenkins.war (To run jar files in general use Java -jar)
+Jenkins URL: http://localhost:8080/
+Jenkins username: Nour
+Jenkins pass:admin
+
+//We need to insall in jenkins Git , GitHub and maven integration plugins
+
+//Then connect the paths of Java JDK  , Git and maven softwares  
+
+then create the maven project 
+-Specify the link of the remote repo
+-Specify on the build of pom.xml file (test)
+
